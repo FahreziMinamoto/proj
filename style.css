@@ -1,3 +1,35 @@
+/* Responsive Mobile */
+/* Dekstop or Laptop */
+@media (max-width: 1024px){
+    .hideOnMObile {
+        display: none;
+    }
+}
+
+/* Tablets */
+@media (max-width: 600px){
+    
+}
+
+/* Mobile Phone */
+@media (max-width: 600px){
+    .hideOnDekstop {
+        display: none;
+    }
+    .hero-content {
+        flex-direction: column;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .bottom-flex {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
 :root {
     --blue: #0066ff;
     --dark: #050505;
@@ -29,12 +61,21 @@ body {
 
 /* Navbar */
 .navbar {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 20px 0; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px);
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background: rgba(5, 5, 5, 0.8); 
+    backdrop-filter: blur(10px);
 }
 .nav-container {
-    display: flex; justify-content: space-between; align-items: center;
-    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
 }
 .logo {
     font-weight: 800;
@@ -68,6 +109,47 @@ body {
     border-radius: 5px;
     display: inline-block;
 }
+
+/* Sidebar Nav */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 9999;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar ul {
+    width: 100%;
+    list-style: none;
+    flex-direction: column;
+    margin-top: 100%;
+    margin-left: 50px;
+}
+
+.sidebar a {
+    width: 100%;
+    text-decoration: none;
+    gap: 10px;
+    color: var(--text);
+}
+
+.sidebar li {
+    margin-bottom: 50px;
+}
+
+.sidebar button {
+    margin-left: 50px;
+}
+
+
 
 /*Login modal */
 /* Sembunyikan modal secara default */
@@ -180,8 +262,10 @@ p a  {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: url('z\ gambar\ aset/heroo.jpeg') center/cover no-repeat;
+    background: url('z\ gambar\ aset/Haiqal.png') center/cover no-repeat;
     position: relative; 
+    min-height: 80vh;
+    background-position: top;
 }
 .hero-overlay {
     position: absolute; 
@@ -197,7 +281,7 @@ p a  {
     padding-left: 10%; 
 }
 .hero-content h1 {
-    font-size: 5rem; 
+    font-size: clamp(2rem, 5vw, 4rem); 
     font-weight: 800; 
     line-height: 1; 
     margin: 20px 0; 
@@ -221,6 +305,7 @@ p a  {
     gap: 20px;
     align-items: center;
     margin-top: 40px;
+    max-height: 80vh;
 }
 
 /* Tombol Utama (Solid Blue Glow) */
@@ -265,6 +350,7 @@ p a  {
     border-radius: 2px;
     transition: all 0.4s ease;
     backdrop-filter: blur(5px);
+    
 }
 .btn-outline-cta:hover {
     background: #fff;
@@ -529,21 +615,3 @@ p a  {
 
 .legal-links a:hover { color: #fff; }
 
-/* Responsive Mobile */
-@media (max-width: 992px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .bottom-flex {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-}
